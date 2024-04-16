@@ -86,9 +86,9 @@ public class MainActivity extends AppCompatActivity {
             finalBurgerPrice = setBurgerPrice(initialBurgerPrice, addedBacon,
                     addedCheese, addedOnionRings);
 
-            Toast.makeText(this, "Abrindo aplicativo de e-mail padrão", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(Intent.ACTION_SENDTO);
+            Intent intent = new Intent(Intent.ACTION_SEND);
             intent.setType("plain/text");
+            intent.putExtra(Intent.EXTRA_TITLE, "Escolha um aplicativo de e-mail");
             intent.putExtra(Intent.EXTRA_SUBJECT, "Pedido de " + personName + " - " + "HamburgueriaZ");
             intent.putExtra(Intent.EXTRA_TEXT, printOrderResult(personName, baconIncluded,
                     cheeseIncluded, onionRingsIncluded));
